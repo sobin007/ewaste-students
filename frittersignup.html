@@ -17,7 +17,7 @@
     
     .container {
       width: 300px;
-      height: 500px;
+      height: 300px;
       margin: 0 10px; /* Adjusted margin between containers */
       padding: 20px;
       background-color: white;
@@ -99,85 +99,32 @@
       margin-right: 10px;
     }	
     .form-input {
-     margin-bottom: 23px; }
+     margin-bottom: 23px; 
+    }
+
+     .close-icon{
+      margin-left: 90px;
+      padding-left: 50px;
+      color: grey;
+      cursor: pointer;
+    }
   </style>
- <script>
-        function passCheck(){
-    var value=document.getElementById("password").value;
-    var x=/^(?=.[A-Z])(?=.[a-z])(?=.[0-9])(?=.[!@#$%^&])[A-Za-z0-9!@#$%^&]{8,12}$/;
-    if(value.match(x)){
-        document.getElementById("passp").innerHTML="";
-    }
-    else{
-        document.getElementById("passp").style.color="red";
-        document.getElementById("passp").innerHTML="Password must have one uppercase,lowercase,<br>digit,special character & 8-12 characters!";
-    }
-}
-//for phoneCheck() end
-function confirmCheck(){
-    value1=document.getElementById("password").value;
-    value2=document.getElementById("cpassword").value;
-    if(value1==value2 && value2.length!=0){
-        document.getElementById("cpassp").innerHTML="";
-    }
-    else{
-        document.getElementById("cpassp").style.color="red";
-        document.getElementById("cpassp").innerHTML="Password does not match";
-    }
-}
-
-
-function clearError(){
-   // document.getElementById("namep").innerHTML="";
-  //  document.getElementById("emailp").innerHTML="";
-    document.getElementById("passp").innerHTML="";
-    //document.getElementById("phonep").innerHTML="";
-    document.getElementById("cpassp").innerHTML="";
-}
-            </script>
-
-                    <form name="form" method="post" action="buyer.html"  onsubmit="return validf()" >   
-
+<script>
+        
+</script>
+  
 </head>
 
 <body>
 
   <div class="container-wrapper">
     <div class="container">
-    <h2>Fritter Away</h2> 
+    <h2>Fritter Away<span class="close-icon" onclick="location.href='fritterlogin.php'">&#10006;</span></h2> 
     <h1>Get started !</h1>
-      <form>
-        <label for="name">Name of The Company:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" required>
-      
-        <form onsubmit="return validatePassword()">
-
-         
-          <div class="form-input">
-            <label for="password" class="required">Password</label>
-            <input type="password" name="password" id="password" oninput="passCheck()" onblur='clearError()' placeholder="Enter a  password between 8-12 characters" required/>
-            <p id="passp"></p>
-        </div>
-        <div class="form-input">
-          <label for="cpassword" class="required">Confirm Password</label>
-          <input type="password" name="cpassword" id="cpassword" oninput="confirmCheck()" required/>
-          <p id="cpassp"></p>
-      </div>
-
-        <label for="role">Choose your role:</label>
-
-       <a href="buyer.html"><button type="submit" value="Buyer" class="login-button" >Buyer</button></a></form>
-
-       <form name="Seller" method="post" action="seller1.html" onsubmit="return validf()" > 
-
-        <a href="seller1.html"><button type="submit" value="Seller" class="login-button" >Seller</button></a></form>
-     <br>
-	<br>
-      </form>
-
-
-    
+    <br>
+    <label for="role">Choose your role:</label>
+        <button type="submit" value="Buyer" onclick="window.location.href='buyersignup.php'" class="login-button" >Buyer</button><br><br><br>
+        <button type="submit" value="Seller" onclick="window.location.href='sellersignup.php'" class="login-button" >Seller</button>
+    <br><br>
 </body>
 </html>
